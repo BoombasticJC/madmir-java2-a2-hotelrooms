@@ -7,7 +7,7 @@ public class HotelBilling {
 	public static void main(String[] args) {
 		//Declaring Variables
 		double roomRate = 95.00;
-		double coupon = 0.10;
+		double coupon = Double.parseDouble(JOptionPane.showInputDialog("Discount: "));
 		//User Input
 		int numberOfRooms = Integer.parseInt(JOptionPane.showInputDialog("How Many Rooms?: "));
 		
