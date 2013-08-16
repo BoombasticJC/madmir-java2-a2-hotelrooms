@@ -8,7 +8,10 @@ public class HotelBilling {
 		//Declaring Variables
 		double roomRate = 95.00;
 		double coupon = 0.10;
-		int numberOfRooms = 2;
+		//User Input
+		int numberOfRooms = Integer.parseInt(JOptionPane.showInputDialog("How Many Rooms?: "));
+		
+		// Calling?
 		double totalBill = calculateBill(roomRate, coupon, numberOfRooms);
 		
 		//System Output
