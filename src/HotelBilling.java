@@ -6,10 +6,11 @@ public class HotelBilling {
 
 	public static void main(String[] args) {
 		//Declaring Variables
-		double roomRate = 95.00;
-		double coupon = Double.parseDouble(JOptionPane.showInputDialog("Discount: "));
+		double roomRate = 95.00
+				;
 		//User Input
 		int numberOfRooms = Integer.parseInt(JOptionPane.showInputDialog("How Many Rooms?: "));
+		double coupon = Double.parseDouble(JOptionPane.showInputDialog("Discount: "));
 		
 		// Calling?
 		double totalBill = calculateBill(roomRate, coupon, numberOfRooms);
