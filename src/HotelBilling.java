@@ -1,21 +1,48 @@
+import javax.swing.JOptionPane;
 
 public class HotelBilling {
+	
+	final static float SALES_TAXS = 0.13f;
 
 	public static void main(String[] args) {
-		/*
-		 * In the main method, declare and initialize variables
-		 * for room price, number of rooms booked, and coupon rate.
-		 * 
-		 * Then call each case of the overloaded method 
-		 * calculateBill() to demonstrate the use of overloaded 
-		 * methods
-		 */
+		//Declaring Variables
+		double roomRate = 95.00;
+		double coupon = 0.10;
+		int numberOfRooms = 2;
+		double totalBill = calculateBill(roomRate, coupon, numberOfRooms);
+		
+		//System Output
+		JOptionPane.showMessageDialog(null, "Your Total is $" +totalBill);
 	}
 
-	/*  
-	 * Here you will create four new methods:
-	 * -- Three cases of the overloaded method calculateBill()
-	 * -- A method called twoDecimalRounding() which will
-	 * 		be called by each case of the calculateBill() method.
-	 */
+	public static double calculateBill(double rate) {
+		//Calculations
+		double tax = rate * SALES_TAXS;
+		double finalRate = rate + tax;
+		return finalRate;
+	}
+	
+	public static double calculateBill(double rate, double coupon) {
+		//Calculations
+		double tax = rate * SALES_TAXS;
+		double finalRate = rate + tax;
+		finalRate = finalRate * (1 - coupon);
+		return finalRate;
+	}
+	
+	public static double calculateBill(double rate, int numberOfRooms) {
+		//Calculations
+		double tax = rate * SALES_TAXS;
+		double finalRate = rate + tax;
+		finalRate = finalRate * numberOfRooms ;
+		return finalRate;
+	
+	}
+	public static double calculateBill(double rate, double coupon, int numberOfRooms) {
+		//More Calculations
+		double tax = rate * SALES_TAXS;
+		double finalRate = rate + tax;
+		finalRate = finalRate * numberOfRooms * (1 - coupon);
+		return finalRate;
+	}
 }
