@@ -19,6 +19,7 @@ public class HotelBilling {
 		//Calculations
 		double tax = rate * SALES_TAXS;
 		double finalRate = rate + tax;
+		finalRate = twoDecimalRounding(finalRate);
 		return finalRate;
 	}
 	
@@ -27,6 +28,7 @@ public class HotelBilling {
 		double tax = rate * SALES_TAXS;
 		double finalRate = rate + tax;
 		finalRate = finalRate * (1 - coupon);
+		finalRate = twoDecimalRounding(finalRate);
 		return finalRate;
 	}
 	
@@ -35,6 +37,7 @@ public class HotelBilling {
 		double tax = rate * SALES_TAXS;
 		double finalRate = rate + tax;
 		finalRate = finalRate * numberOfRooms ;
+		finalRate = twoDecimalRounding(finalRate);
 		return finalRate;
 	
 	}
@@ -43,6 +46,16 @@ public class HotelBilling {
 		double tax = rate * SALES_TAXS;
 		double finalRate = rate + tax;
 		finalRate = finalRate * numberOfRooms * (1 - coupon);
+		finalRate = twoDecimalRounding(finalRate);
 		return finalRate;
+	}
+	
+	public static double twoDecimalRounding(double decimal) {
+		//And Some more Calculations declaring Decimal Placing
+		decimal = decimal*100;
+		decimal = decimal + 0.5;
+		decimal = (int) decimal;
+		decimal = decimal/100;
+		return decimal;
 	}
 }
